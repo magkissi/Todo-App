@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import TodoForm from "../../components/todo_form/TodoForm";
-import Tags from "../../components/Tags";
+import Filter from "../../components/filter/Filter";
+import { Provider } from "../../components/Context";
+import TodoCard from "../../components/todoCard/TodoCard";
 
 function Home() {
+  const [tags, setTags] = useState([
+    "Completed",
+    "Not Completed",
+    "Urgent",
+    "Daily",
+  ]);
+
   return (
-    <div className="home__container">
-      <TodoForm />
-      <div className="home__tag">
-        <Tags />
+    <Provider>
+      <div className="home__container">
+        <TodoForm selectOptions={tags} />
+        <div className="home__tag">
+          <Filter tagItems={tags} />
+        </div>
+        <div className="home__todo">
+          <TodoCard />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 

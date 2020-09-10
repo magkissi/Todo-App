@@ -1,0 +1,40 @@
+.todoCard__container {
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.todoCard__text {
+  background-color: cyan;
+}
+
+.todoCard__text p {
+  margin: 0;
+}
+
+.todoCard__btn button {
+  font-size: 15px;
+  background-color: rgb(22, 158, 158);
+  width: 100px;
+  margin-bottom: 3px;
+}
+
+.todoCard__btn {
+  display: flex;
+  justify-content: space-between;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #ccc;
+  margin-bottom: 10px;
+}
+
+.todoCard__btn img {
+  width: 30px;
+}
+
+.todoCard__tag {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
