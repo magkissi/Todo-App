@@ -6,12 +6,7 @@ import { Provider } from "../../components/Context";
 import TodoCard from "../../components/todoCard/TodoCard";
 
 function Home() {
-  const [tags, setTags] = useState([
-    "Completed",
-    "Not Completed",
-    "Urgent",
-    "Daily",
-  ]);
+  const [tags, setTags] = useState(["Urgent", "Daily"]);
 
   return (
     <Provider>

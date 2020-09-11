@@ -5,31 +5,22 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.todoCard__text {
-  background-color: cyan;
-}
-
 .todoCard__text p {
   margin: 0;
 }
 
-.todoCard__btn button {
-  font-size: 15px;
-  background-color: rgb(22, 158, 158);
-  width: 100px;
-  margin-bottom: 3px;
-}
-
-.todoCard__btn {
+.todoCard__details {
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #ccc;
   margin-bottom: 10px;
 }
 
-.todoCard__btn img {
+.todoCard__details img {
   width: 30px;
 }
 
@@ -37,4 +28,14 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.todoCard__btn {
+  margin-bottom: 5px;
+  width: 80px;
+}
+
+.todoCard__date {
+  display: flex;
+  justify-content: space-between;
 }

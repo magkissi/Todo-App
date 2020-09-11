@@ -10,11 +10,15 @@ function TodoCard() {
       <div className="todoCard__text">
         <p>todo</p>
       </div>
-      <div>
-        <h4>Date : </h4>
+      <div className="todoCard__date">
+        <h5>Created on : </h5>
+        <h5>Due date : </h5>
       </div>
-      <div className="todoCard__btn">
-        <Button text="Done" />
+      <div className="todoCard__details">
+        <div className="todoCard__btn">
+          <Button text="Done" color="#06CDF4" fontSize="15px" />
+        </div>
+
         <div>
           <img src="/delete_icon.png" alt="delete" />
         </div>
