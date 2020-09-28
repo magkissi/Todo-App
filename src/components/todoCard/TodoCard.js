@@ -4,15 +4,15 @@ import Button from "../button/Button";
 
 import "./todoCard.css";
 
-function TodoCard() {
+function TodoCard({ todoText, dueDate, createdDate, tagText }) {
   return (
     <div className="todoCard__container">
       <div className="todoCard__text">
-        <p>todo</p>
+        <p>{todoText}</p>
       </div>
       <div className="todoCard__date">
-        <h5>Created on : </h5>
-        <h5>Due date : </h5>
+        <h5>Created on : {createdDate}</h5>
+        <h5>Due date : {dueDate}</h5>
       </div>
       <div className="todoCard__details">
         <div className="todoCard__btn">
@@ -24,7 +24,7 @@ function TodoCard() {
         </div>
       </div>
       <div className="todoCard__tag">
-        <Tag text="complete" />
+        <Tag text={tagText} />
       </div>
     </div>
   );

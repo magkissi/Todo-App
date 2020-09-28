@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import Input from "../../components/input/Input";
 import Select from "../../components/select/Select";
 import "./todoForm.css";
@@ -10,41 +10,44 @@ function TodoForm({ selectOptions }) {
   const [todoItem, setTodoItem] = useState("");
   const [todoTags, setTodoTags] = useState([]);
   const [todoDate, setTodoDate] = useState("");
-  useEffect(() => {
-    console.log("youu", todo);
-  }, [todo]);
+  const [error, setError] = useState(false);
+  const [reset, setReset] = useState(false);
 
-  const handleInputChange = (e) => {
-    let newItem = e.target.value;
-    setTodoItem(newItem);
+  const handleInputChange = (input) => {
+    setTodoItem(input);
   };
 
   const handleSelectChange = (e) => {
-    let todoTags = e.target.value;
-    setTodoTags((prevTags) => [todoTags, ...prevTags]);
+    let todoTag = e.target.value;
+    setTodoTags(todoTag);
   };
 
-  const handleDateChange = (e) => {
-    let todoDate = e.target.value;
-    setTodoDate(todoDate);
+  const handleDateChange = (date) => {
+    setTodoDate(date);
   };
 
-  const handleClick = (e) => {
-    const summaryTodo = {
-      inputValue: todoItem,
-      tags: todoTags,
-
-      DueDate: todoDate,
-      createdDate: Date.now(),
-    };
-
-    setTodo((prevTodos) => [summaryTodo, ...prevTodos]);
+  const handleClick = () => {
+    if (todoItem === "" || todoTags === "" || todoDate === "") {
+      setError(true);
+    } else {
+      setError(false);
+      const summaryTodo = {
+        inputValue: todoItem,
+        tags: todoTags,
+        DueDate: todoDate,
+        createdDate: Date.now(),
+      };
+      setTodo((prevTodos) => [summaryTodo, ...prevTodos]);
+      setReset(true);
+    }
   };
 
   return (
     <div className="form">
       <div className="form__items">
         <Input
+          resetValue={reset}
+          isRequired={true}
           onTextChange={handleInputChange}
           type="text"
           placeholder="Enter Todo"
@@ -59,10 +62,17 @@ function TodoForm({ selectOptions }) {
       </div>
       <div className="form__items">
         <label>Set Due date :</label>
-        <Input onTextChange={handleDateChange} id="input2" type="date" />
+        <Input
+          resetValue={reset}
+          onTextChange={handleDateChange}
+          id="input2"
+          type="date"
+          isRequired={true}
+        />
       </div>
       <div className="form__items">
         <Button clickButton={handleClick} text="Add to do" color="#06CDF4" />
+        {error === true ? <p>*fill all empty fields</p> : ""}
       </div>
     </div>
   );
