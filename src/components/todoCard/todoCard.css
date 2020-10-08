@@ -32,10 +32,19 @@
 
 .todoCard__btn {
   margin-bottom: 5px;
-  width: 80px;
+  width: fit-content;
+}
+
+.todoCard__btn select {
+  background-color: #06cdf4;
+  cursor: pointer;
 }
 
 .todoCard__date {
   display: flex;
   justify-content: space-between;
+}
+
+img {
+  cursor: pointer;
 }

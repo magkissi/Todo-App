@@ -17,13 +17,16 @@ function TodoForm({ selectOptions }) {
     setTodoItem(input);
   };
 
-  const handleSelectChange = (e) => {
-    let todoTag = e.target.value;
-    setTodoTags(todoTag);
+  const handleSelectChange = (option) => {
+    setTodoTags(option);
   };
 
   const handleDateChange = (date) => {
     setTodoDate(date);
+  };
+
+  const handleReset = () => {
+    setReset(false);
   };
 
   const handleClick = () => {
@@ -46,6 +49,7 @@ function TodoForm({ selectOptions }) {
     <div className="form">
       <div className="form__items">
         <Input
+          inputReset={handleReset}
           resetValue={reset}
           isRequired={true}
           onTextChange={handleInputChange}
@@ -55,6 +59,7 @@ function TodoForm({ selectOptions }) {
       </div>
       <div className="form__items">
         <Select
+          resetValue={reset}
           options={selectOptions}
           id="select"
           onSelectChange={handleSelectChange}
@@ -63,6 +68,7 @@ function TodoForm({ selectOptions }) {
       <div className="form__items">
         <label>Set Due date :</label>
         <Input
+          inputReset={handleReset}
           resetValue={reset}
           onTextChange={handleDateChange}
           id="input2"

@@ -8,16 +8,17 @@ function Input({
   color,
   isRequired,
   resetValue,
+  inputReset,
 }) {
   const [error, setError] = useState(false);
   const [input, setInput] = useState("");
 
   useEffect(() => {
-    console.log("reset", resetValue);
     if (resetValue === true) {
       setInput("");
+      inputReset();
     }
-  });
+  }, [resetValue]);
 
   const handleError = () => {
     if (isRequired === true) {

@@ -1,6 +1,5 @@
 import React from "react";
 import Tag from "../tag/Tag";
-import Button from "../button/Button";
 
 import "./todoCard.css";
 
@@ -16,7 +15,11 @@ function TodoCard({ todoText, dueDate, createdDate, tagText }) {
       </div>
       <div className="todoCard__details">
         <div className="todoCard__btn">
-          <Button text="Done" color="#06CDF4" fontSize="15px" />
+          <select>
+            <option>Stauts</option>
+            <option>Completed</option>
+            <option>Not Completed</option>
+          </select>
         </div>
 
         <div>
@@ -24,7 +27,7 @@ function TodoCard({ todoText, dueDate, createdDate, tagText }) {
         </div>
       </div>
       <div className="todoCard__tag">
-        <Tag text={tagText} />
+        Todo type : <Tag text={tagText} />
       </div>
     </div>
   );
