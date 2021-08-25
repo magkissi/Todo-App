@@ -15,11 +15,14 @@ function Home() {
 
   return (
     <div className="home__container">
-      <TodoForm selectOptions={tags} />
-      <div className="home__tag">
-        <Filter tagItems={tags} onAddTag={handleAddTag} />
+      <div className="home__todoForm">
+        <TodoForm selectOptions={tags} />
+        <div className="home__tag">
+          <Filter tagItems={tags} onAddTag={handleAddTag} />
+        </div>
       </div>
-      <div className="home__todo">
+
+      <div className="home__todoItems">
         {todo.map((item) => (
           <TodoCard
             tagText={item.tags}

@@ -6,7 +6,7 @@ import { Provider } from "./components/Context";
 function App() {
   return (
     <Provider>
-      <div className="App">
+      <div className="app">
         <Home />
       </div>
     </Provider>

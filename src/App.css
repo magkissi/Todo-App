@@ -1,8 +1,15 @@
-.App {
+.app {
   background-color: white;
   min-height: 800px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 1366px) {
+  .app {
+    display: flex;
+    justify-content: space-around;
+  }
 }

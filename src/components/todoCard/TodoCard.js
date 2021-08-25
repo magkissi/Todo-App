@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Tag from "../tag/Tag";
 
 import "./todoCard.css";
 
-function TodoCard({ todoText, dueDate, createdDate, tagText }) {
+function TodoCard({ todoText, dueDate, createdDate, tagText, handleDelete }) {
+  const [option, setOption] = useState("Not Completed");
+
+  const handleChange = (e) => {
+    setOption(e.target.value);
+  };
   return (
     <div className="todoCard__container">
       <div className="todoCard__text">
@@ -15,15 +20,19 @@ function TodoCard({ todoText, dueDate, createdDate, tagText }) {
       </div>
       <div className="todoCard__details">
         <div className="todoCard__btn">
-          <select>
-            <option>Stauts</option>
-            <option>Completed</option>
-            <option>Not Completed</option>
+          <select
+            onChange={handleChange}
+            style={
+              option == "Completed" ? { background: "green", color: "red" } : {}
+            }
+          >
+            <option value="Not Completed">Not Completed</option>
+            <option value="Completed">Completed</option>
           </select>
         </div>
 
         <div>
-          <img src="/delete_icon.png" alt="delete" />
+          <img onClick={handleDelete} src="/delete_icon.png" alt="delete" />
         </div>
       </div>
       <div className="todoCard__tag">
