@@ -12,6 +12,10 @@ function Home() {
   const handleAddTag = (newTag) => {
     setTags([...tags, newTag]);
   };
+  const deleteItem = (id) => {
+    const items = todo.filter((item) => item.id !== id);
+    setTodo(items);
+  };
 
   return (
     <div className="home__container">
@@ -30,6 +34,8 @@ function Home() {
             createdDate={item.createdDate}
             dueDate={item.DueDate}
             todoText={item.inputValue}
+            id={item.id}
+            handleDelete={deleteItem}
           />
         ))}
       </div>

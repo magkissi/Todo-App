@@ -1,7 +1,10 @@
+h5 {
+  margin: 0;
+}
+
 .todoCard__container {
-  margin-top: 20px;
   border-radius: 4px;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -38,14 +41,22 @@
 .todoCard__btn select {
   background-color: #06cdf4;
   cursor: pointer;
+  height: 30px;
 }
 
 .todoCard__date {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 10px;
   font-size: 13px;
 }
 
 img {
   cursor: pointer;
+}
+
+#due__date {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: red;
 }

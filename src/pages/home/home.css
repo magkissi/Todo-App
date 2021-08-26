@@ -13,17 +13,18 @@
   left: 0;
 }
 
+.home__todoItems {
+  height: 200px;
+}
 @media screen and (min-width: 1366px) {
   .home__container {
     display: flex;
     height: 100vh;
-    /* overflow: scroll; */
   }
   .home__todoItems {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
-    height: 250px;
     margin-left: 30px;
   }
 }

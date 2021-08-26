@@ -38,8 +38,10 @@ function TodoForm({ selectOptions }) {
         inputValue: todoItem,
         tags: todoTags,
         DueDate: todoDate,
-        createdDate: Date.now(),
+        createdDate: new Date(Date.now()).toLocaleString(),
+        id: Date.now(),
       };
+
       setTodo((prevTodos) => [summaryTodo, ...prevTodos]);
       setReset(true);
     }
