@@ -38,7 +38,7 @@ function TodoForm({ selectOptions }) {
         inputValue: todoItem,
         tags: todoTags,
         DueDate: todoDate,
-        createdDate: new Date(Date.now()).toLocaleString(),
+        createdDate: new Date(Date.now()).toLocaleString().split("-"),
         id: Date.now(),
       };
 

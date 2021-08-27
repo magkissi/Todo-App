@@ -21,9 +21,9 @@ function Home() {
     <div className="home__container">
       <div className="home__todoForm">
         <TodoForm selectOptions={tags} />
-        <div className="home__tag">
+        {/* <div className="home__tag">
           <Filter tagItems={tags} onAddTag={handleAddTag} />
-        </div>
+        </div> */}
       </div>
 
       <div className="home__todoItems">
